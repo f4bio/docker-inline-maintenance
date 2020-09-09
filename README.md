@@ -7,6 +7,11 @@ docker-inline-maintenance
 
 ## how to
 
-`$ docker run --rm -it -v some-volume:/workspace`
-`~> nano /workspace/file`
+```bash
+$ docker run --rm -it -v some-volume:/workspace
+```
+
+```fish
+~> nano /workspace/file
+```
 ...
