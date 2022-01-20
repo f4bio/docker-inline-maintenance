@@ -4,6 +4,7 @@
 * `nano` as text editor
 * `rsync` for copying things
 * `bash` and `fish` shells
+* multi-architecture support
 
 ## how to
 
