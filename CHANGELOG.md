@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.4
+
+* added zsh & neovim
+* defaulting to zsh & neovim
+
 ## 0.0.2
 
 * added rsync

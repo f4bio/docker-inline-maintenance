@@ -1,19 +1,35 @@
 # docker-inline-maintenance
 
 * powered by alpine
-* `nano` as text editor
+* `nano`, `neovim`* as text editor
 * `rsync` for copying things
-* `bash` and `fish` shells
+* `bash`, `zsh`* shells
+* multi-architecture support
 
-## how to
+## how to use
 
 ```bash
-$ docker run --rm -it \
+docker run --rm -it \
     -v some-volume:/workspace \
-    -v /some/directory:/config/files \
-    f4bio/docker-inline-maintenance:latest`
+    -v /some/directory:/workspace/directory \
+    f4bio/docker-inline-maintenance:latest
+```
 
-~> rsync -ar /config/files/* /workspace/
+```zsh
+~> rsync -ar /workspace/config/files/* /workspace/
 ~> nano /workspace/file
 ...
+```
+
+## how to build
+
+```bash
+PLATFORM_IDENTIFIER=linux/amd64 # linux/arm64 # linux/arm/v7
+VERSION_NUMBER=0.0.4
+
+docker buildx build \
+    --platform $PLATFORM_IDENTIFIER \
+    --tag f4bio/docker-inline-maintenance:latest \
+    --tag f4bio/docker-inline-maintenance:${VERSION_NUMBER} \
+    --push .
 ```

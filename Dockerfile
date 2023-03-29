@@ -1,15 +1,20 @@
 FROM alpine:latest
 
 LABEL maintainer="Fabio Tea <iam@f4b.io>"
-LABEL version="0.0.2"
+LABEL version="0.0.4"
 
-ENV EDITOR=/bin/nano
+ENV EDITOR=/usr/bin/neovim
 
-RUN apk update && apk upgrade
-RUN apk add \
-	nano \
-	bash \
-	fish \
-	rsync
+ARG ADDITIONAL_PACKAGES="vim"
 
-CMD ["/usr/bin/fish"]
+RUN apk update \
+	&& apk upgrade \
+	&& apk add \
+		nano \
+		neovim \
+		bash \
+		zsh \
+		rsync \
+		${ADDITIONAL_PACKAGES}
+
+CMD ["/usr/bin/zsh"]
