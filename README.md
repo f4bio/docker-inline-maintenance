@@ -16,27 +16,20 @@ docker run --rm -it \
 ```
 
 ```zsh
-~> rsync -ar /config/files/* /workspace/
+~> rsync -ar /workspace/config/files/* /workspace/
 ~> nano /workspace/file
 ...
 ```
 
 ## how to build
 
-### amd64
-
 ```bash
-docker buildx build \
-    --platform linux/amd64 \
-    --tag f4bio/docker-inline-maintenance:latest \
-    --push .
-```
+PLATFORM_IDENTIFIER=linux/amd64 # linux/arm64 # linux/arm/v7
+VERSION_NUMBER=0.0.4
 
-### arm64
-
-```bash
 docker buildx build \
-    --platform linux/arm64 \
+    --platform $PLATFORM_IDENTIFIER \
     --tag f4bio/docker-inline-maintenance:latest \
+    --tag f4bio/docker-inline-maintenance:${VERSION_NUMBER} \
     --push .
 ```
