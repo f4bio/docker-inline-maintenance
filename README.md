@@ -24,12 +24,12 @@ docker run --rm -it \
 ## how to build
 
 ```bash
-PLATFORM_IDENTIFIER=linux/amd64 # linux/arm64 # linux/arm/v7
-VERSION_NUMBER=0.0.4
+PLATFORM_IDENTIFIER=linux/amd64 # linux/arm64 # linux/arm/v7 # ...
+VERSION_NUMBER=0.0.x
 
 docker buildx build \
     --platform $PLATFORM_IDENTIFIER \
-    --tag f4bio/docker-inline-maintenance:latest \
     --tag f4bio/docker-inline-maintenance:${VERSION_NUMBER} \
+    --tag f4bio/docker-inline-maintenance:latest \
     --push .
 ```

@@ -1,11 +1,11 @@
 FROM alpine:latest
 
 LABEL maintainer="Fabio Tea <iam@f4b.io>"
-LABEL version="0.0.4"
+LABEL version="0.0.5"
 
 ENV EDITOR=/usr/bin/neovim
 
-ARG ADDITIONAL_PACKAGES="vim"
+ARG ADDITIONAL_PACKAGES="nmap"
 
 RUN apk update \
 	&& apk upgrade \
