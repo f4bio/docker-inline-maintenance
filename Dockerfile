@@ -17,4 +17,4 @@ RUN apk update \
 		rsync \
 		${ADDITIONAL_PACKAGES}
 
-CMD ["/usr/bin/zsh"]
+CMD ["/bin/zsh"]
