@@ -24,7 +24,7 @@ docker run --rm -it \
 ## how to build
 
 ```bash
-PLATFORM_IDENTIFIER=linux/amd64 # linux/arm64 # linux/arm/v7 # ...
+PLATFORM_IDENTIFIER="linux/amd64,linux/arm64,linux/arm/v7"
 VERSION_NUMBER=0.0.x
 
 docker buildx build \
